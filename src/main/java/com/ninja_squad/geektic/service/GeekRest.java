@@ -17,7 +17,7 @@ import com.ninja_squad.geektic.domain.Geek;
 @RestController
 @Transactional
 @RequestMapping("/api/geek")
-public class GeekService {
+public class GeekRest {
 
 	@RequestMapping(method = POST)
 	public List<Geek> searchGeeks(Critere critere) {

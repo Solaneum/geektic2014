@@ -5,13 +5,17 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Geek {
 
 	@Id
+	@SequenceGenerator(name = "geek_gen", sequenceName = "geek_seq")
+	@GeneratedValue(generator = "geek_gen")
 	private Long id;
 
 	private String nom;
@@ -21,7 +25,7 @@ public class Geek {
 	private String mail;
 
 	@Enumerated(EnumType.STRING)
-	private Sexe sex;
+	private Sexe sexe;
 
 	@OneToMany
 	private List<Interet> interets;
@@ -44,12 +48,12 @@ public class Geek {
 		this.prenom = prenom;
 	}
 
-	public Sexe getSex() {
-		return sex;
+	public Sexe getSexe() {
+		return sexe;
 	}
 
-	public void setSex(Sexe sex) {
-		this.sex = sex;
+	public void setSexe(Sexe sex) {
+		this.sexe = sex;
 	}
 
 	public String getMail() {
