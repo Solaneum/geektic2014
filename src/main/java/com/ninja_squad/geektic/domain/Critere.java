@@ -4,23 +4,23 @@ import java.util.List;
 
 public class Critere {
 
-	private List<Sexe> sexVoulu;
-	private List<Interet> interetsVoulus;
+	private Sexe sexe;
+	private List<Long> interets;
 
-	public List<Sexe> getSexVoulu() {
-		return sexVoulu;
+	public Sexe getSexe() {
+		return sexe;
 	}
 
-	public void setSexVoulu(List<Sexe> sexVoulu) {
-		this.sexVoulu = sexVoulu;
+	public void setSexe(Sexe sexe) {
+		this.sexe = sexe;
 	}
 
-	public List<Interet> getInteretsVoulus() {
-		return interetsVoulus;
+	public List<Long> getInterets() {
+		return interets;
 	}
 
-	public void setInteretsVoulus(List<Interet> interetsVoulus) {
-		this.interetsVoulus = interetsVoulus;
+	public void setInterets(List<Long> interets) {
+		this.interets = interets;
 	}
 
 }

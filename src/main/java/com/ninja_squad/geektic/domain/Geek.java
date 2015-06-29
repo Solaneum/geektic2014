@@ -7,7 +7,9 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -27,13 +29,22 @@ public class Geek {
 	@Enumerated(EnumType.STRING)
 	private Sexe sexe;
 
-	@OneToMany
+	@ManyToMany
+	@JoinTable(name = "Geek_Interet", joinColumns = { @JoinColumn(name = "id_geek", referencedColumnName = "id") }, inverseJoinColumns = { @JoinColumn(name = "id_interet", referencedColumnName = "id") })
 	private List<Interet> interets;
 
 	// Methodes
 
 	public String getNom() {
 		return nom;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public void setNom(String nom) {

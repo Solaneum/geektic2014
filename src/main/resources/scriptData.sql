@@ -1,36 +1,3 @@
-drop table Geek if exists cascade;
-drop table Interet if exists cascade;
-drop table Geek_Interet if exists cascade;
-drop sequence geek_seq if exists;
-drop sequence interet_seq if exists;
-
-Create Table Geek (
-	id 		numeric not null,
-	nom 	varchar(25) not null,	
-	prenom 	varchar(25) not null,
-	mail 	varchar(60) not null,
-	sexe 	varchar(10) not null,
-	primary key (id)
-);
-
-Create table Interet (
-	id 		numeric not null,
-	libelle varchar(100) not null,
-	primary key (id)
-);
-
-Create table Geek_Interet (
-	id_geek numeric not null,
-	id_interet numeric not null,
-	primary key (id_geek, id_interet),
-	foreign key (id_geek) references Geek(id),
-	foreign key (id_interet) references Interet(id)
-);
-
-
-create sequence geek_seq start with 1000;
-create sequence interet_seq start with 1000;
-
 INSERT INTO Geek (id,nom,prenom,mail,sexe) VALUES (1,'Mcintosh','Frances','magna.Praesent.interdum@Nullamvitae.ca','Femme'),(2,'Molina','Maile','placerat.orci@nonenim.edu','Femme'),(3,'Reese','Craig','Morbi.neque.tellus@sedhendrerita.co.uk','Homme'),(4,'Grant','Althea','Fusce.diam@interdumfeugiatSed.net','Homme'),(5,'Mueller','September','non.justo@ornare.com','Homme'),(6,'Goff','Jerome','laoreet.lectus@magna.ca','Femme'),(7,'Johnston','Deborah','magnis.dis@sapienmolestie.ca','Femme'),(8,'Parks','Heather','tempor@euismodmauriseu.com','Femme'),(9,'Park','Alexa','Ut.tincidunt@Vivamuseuismodurna.org','Femme'),(10,'Ross','Ferdinand','turpis.In.condimentum@magnisdis.net','Homme');
 INSERT INTO Geek (id,nom,prenom,mail,sexe) VALUES (11,'Hanson','Lillian','leo@egestas.ca','Femme'),(12,'Wilkinson','Hillary','arcu.Vestibulum@facilisismagnatellus.edu','Femme'),(13,'Kerr','Jennifer','dui.semper.et@elit.ca','Homme'),(14,'Shelton','Shelly','id.erat@auctorquis.org','Homme'),(15,'Dalton','Rhiannon','lacinia.Sed.congue@antebibendum.org','Homme'),(16,'Lester','Harlan','dignissim.tempor.arcu@nullaIntegerurna.edu','Homme'),(17,'Burris','Brock','vulputate.eu@amifringilla.com','Femme'),(18,'Hill','Gloria','id@auctorvelit.edu','Femme'),(19,'Carter','Adele','Duis.at.lacus@eunullaat.co.uk','Femme'),(20,'Fox','Nelle','Proin.ultrices.Duis@dictum.com','Femme');
 INSERT INTO Geek (id,nom,prenom,mail,sexe) VALUES (21,'Lyons','Simone','Pellentesque@tristique.co.uk','Homme'),(22,'Gallegos','Dillon','montes.nascetur.ridiculus@Maurisutquam.org','Homme'),(23,'Talley','Giacomo','blandit.mattis@ultricies.ca','Femme'),(24,'Watkins','Jordan','ipsum.primis@diam.org','Homme'),(25,'Massey','Rachel','Phasellus.elit.pede@ultricesposuerecubilia.com','Homme'),(26,'West','Stone','mattis.ornare@arcuSed.edu','Femme'),(27,'Wilder','Cleo','elit.pretium@ante.edu','Homme'),(28,'Paul','Hedwig','odio.sagittis@Duis.co.uk','Homme'),(29,'Austin','Anjolie','amet.ante@litora.co.uk','Femme'),(30,'Best','Emerson','sem@est.edu','Homme');
