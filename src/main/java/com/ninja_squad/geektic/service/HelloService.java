@@ -1,14 +1,15 @@
 package com.ninja_squad.geektic.service;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 import javax.transaction.Transactional;
 
-import static org.springframework.web.bind.annotation.RequestMethod.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Fake service just to test that everything works fine
+ * 
  * @author JB Nizet
  */
 @RestController
@@ -16,8 +17,8 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 @RequestMapping("/api/hello")
 public class HelloService {
 
-    @RequestMapping(method = GET)
-    public HelloMessage sayHello() {
-        return new HelloMessage();
-    }
+	@RequestMapping(method = GET)
+	public HelloMessage sayHello() {
+		return new HelloMessage();
+	}
 }

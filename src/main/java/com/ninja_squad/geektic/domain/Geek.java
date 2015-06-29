@@ -3,17 +3,30 @@ package com.ninja_squad.geektic.domain;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
-@Table(name = "Geek")
 public class Geek {
 
+	@Id
+	private Long id;
+
 	private String nom;
+
 	private String prenom;
-	private Sexe sex;
+
 	private String mail;
+
+	@Enumerated(EnumType.STRING)
+	private Sexe sex;
+
+	@OneToMany
 	private List<Interet> interets;
+
+	// Methodes
 
 	public String getNom() {
 		return nom;
