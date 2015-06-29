@@ -8,3 +8,6 @@ test-bin/
 *.iml
 MyDB.*
 /test-bin
+.project
+.classpath
+.settings
