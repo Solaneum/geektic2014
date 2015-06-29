@@ -6,64 +6,21 @@
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 </head>
-<body ng-controller="HelloCtrl">
+<body>
 
 	<div class="container">
 
-		<h3>Recherche</h3>
-
-		<div class="jumbotron">
-
-			<div style="float: left; padding-right: 10px" ng-repeat="x in Centres">
-				<input type="checkbox" checklist-model="critere.interets" checklist-value="x.id"> {{x.libelle}}
-			</div>
-			
-			<div>
-				<select  ng-model="critere.sexe" ng-options="sexe for sexe in sexes">
-				</select>
-				<button ng-click="searchByCriteria()" ng-disabled="critere.sexe == undefined">Rechercher</button>
-			</div>
-
-		</div>
+		<h1>Geektic, Fork me dans ton lit</h1>
 
 
-		<div ng-hide="geeks == undefined">
-			<h3>Geeks compatibles : {{geeks.length}}</h3>
+		<div ng-view></div>
 
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>Prénom</th>
-						<th>Nom</th>
-						<th>Centres d'intérêts</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="user in geeks">
-						<td>{{ user.prenom }}</td>
-						<td>{{ user.nom }}</td>
-						<td ng-repeat="x in user.interets">{{ x.libelle }}</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-
-		<div ng-hide="geeks == undefined">
-			<h3>Check this Geek out!</h3>
-
-			<p>{{geek.prenom}} {{geek.nom}}, {{geek.sexe}}</p>
-			<p>{{geek.mail}}</p>
-			<p>{{geek.interets}} {{geek.nom}}, {{geek.sexe}}</p>
-
-
-
-		</div>
 
 	</div>
 
 	<script src="/js/angular.js"></script>
 	<script src="/js/angular-route.js"></script>
-	<script src="/js/app.js"></script>
 	<script src="/js/checklist-model.js"></script>
+	<script src="/js/app.js"></script>
 </body>
 </html>

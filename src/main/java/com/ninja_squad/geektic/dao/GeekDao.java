@@ -37,7 +37,7 @@ public class GeekDao {
 		System.out.println(critere.getSexe() + " "
 				+ Arrays.toString(critere.getInterets().toArray()));
 
-		if (critere.getSexe() != Sexe.Indifférent) {
+		if (critere.getSexe() != Sexe.IndiffÃ©rent) {
 			hql += "and g.sexe = :sexe ";
 		}
 
@@ -45,7 +45,7 @@ public class GeekDao {
 			hql += "and i.id in (:interets) ";
 		}
 
-		if (critere.getSexe() != Sexe.Indifférent) {
+		if (critere.getSexe() != Sexe.IndiffÃ©rent) {
 			if (critere.getInterets() != null
 					&& !critere.getInterets().isEmpty()) {
 				query = em.createQuery(hql, Geek.class)
