@@ -1,0 +1,36 @@
+.centres {
+	padding-right: 10px;
+	float: left;
+}
+
+.blackLink {
+	color: #000000;
+	text-decoration: none;
+}
+
+.searchBox {
+	padding-top: 15px;
+	clear: both;
+}
+
+.searchButton {
+	padding-left: 15px;
+}
+
+.click-a-geek {
+	cursor: pointer;
+}
+
+.geekBox {
+	padding-bottom: 20px;
+}
+
+.geekInfo {	
+	color: #666666;
+    font-style: italic;
+	padding-left: 15px;
+}
+
+.geekInteret {
+	float: left;
+}

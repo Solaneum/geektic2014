@@ -3,15 +3,19 @@
 
 	<div class="jumbotron">
 
-		<div style="float: left; padding-right: 10px" ng-repeat="x in Centres">
-			<input type="checkbox" checklist-model="critere.interets"
-				checklist-value="x.id"> {{x.libelle}}
+		<div class="searchBox">
+			<p>Centres d'intérêts :</p>
+			<div class="centres" ng-repeat="x in Centres">
+				<input type="checkbox" checklist-model="critere.interets"
+					checklist-value="x.id"> {{x.libelle}}
+			</div>
 		</div>
 
-		<div>
+		<div class="searchBox">
+			<p>Détails :</p>
 			<select ng-model="critere.sexe" ng-options="sexe for sexe in sexes">
 			</select>
-			<button ng-click="searchByCriteria()"
+			<button class="searchButton" ng-click="searchByCriteria()"
 				ng-disabled="critere.sexe == undefined">Rechercher</button>
 		</div>
 
@@ -30,7 +34,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="user in geeks" ng-click="displayGeek(user.id)">
+				<tr class="click-a-geek" ng-repeat="user in geeks" ng-click="displayGeek(user.id)">
 					<td>{{ user.prenom }}</td>
 					<td>{{ user.nom }}</td>
 					<td ng-repeat="x in user.interets">{{ x.libelle }}</td>
