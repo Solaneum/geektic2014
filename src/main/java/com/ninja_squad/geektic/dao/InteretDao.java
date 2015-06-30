@@ -16,6 +16,11 @@ public class InteretDao {
 	@PersistenceContext
 	protected EntityManager em;
 
+	/**
+	 * Renvoie tous les intérêts de la base.
+	 * 
+	 * @return List<Interet>
+	 */
 	public List<Interet> findAll() {
 		String jpql = "select i from Interet i";
 		TypedQuery<Interet> query = em.createQuery(jpql, Interet.class);

@@ -19,6 +19,11 @@ public class GeekDao {
 	@PersistenceContext
 	protected EntityManager em;
 
+	/**
+	 * Renvoie tous les geeks de la base.
+	 * 
+	 * @return List<Geek>
+	 */
 	public List<Geek> findAll() {
 		String jpql = "select g from Geek g";
 		TypedQuery<Geek> query = em.createQuery(jpql, Geek.class);
@@ -26,10 +31,22 @@ public class GeekDao {
 		return listeGeeks;
 	}
 
+	/**
+	 * Renvoie le geek correspondant à cet identifiant.
+	 * 
+	 * @param id
+	 * @return Geek
+	 */
 	public Geek findById(Long id) {
 		return em.find(Geek.class, id);
 	}
 
+	/**
+	 * Renvoie les geeks qui tombent sous les éléments du critère.
+	 * 
+	 * @param critere
+	 * @return List<Geek>
+	 */
 	public List<Geek> findByCriteria(Critere critere) {
 		TypedQuery<Geek> query = null;
 		String hql = "Select distinct g from Geek as g left join g.interets i where 1=1 ";

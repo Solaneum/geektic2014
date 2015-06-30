@@ -2,6 +2,13 @@ package com.ninja_squad.geektic.domain;
 
 import java.util.List;
 
+/**
+ * Cette classe correspond aux critères définis par l'utilisteur dans l'IHM. Tri
+ * possible sur le sexe (obligatoirement défini mais peut être ignoré) et / ou
+ * sur les intérêts (non exclusifs lorsque plusieurs choisis).
+ * 
+ * @author Lisa
+ */
 public class Critere {
 
 	private Sexe sexe;
